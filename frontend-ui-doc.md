@@ -211,13 +211,21 @@ import TableDropdownMenu from "../../../../Components/TableDropdownMenu/TableDro
 ```
 
 ```tsx
-const handleDropdownChange = (data) => {
-  setProductDetailsData((prevRows) =>
-    prevRows.map((row) =>
-      row.local_id === data.index ? { ...row, [data.name]: data.value } : row
-    )
-  );
-};
+  const handleDropdownChange = (data) => {
+    // console.log(">> data", data);
+    setLineItems((prevRows) =>
+      prevRows.map((row) =>
+        row.local_id === data.index
+          ? {
+              ...row,
+              [data.name]: data.value,
+              [data.code]: data.codeValue,
+              [data.desc]: data.descValue,
+            }
+          : row
+      )
+    );
+  };
 ```
 
 ```tsx
