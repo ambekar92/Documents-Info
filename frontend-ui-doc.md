@@ -233,11 +233,13 @@ import TableDropdownMenu from "../../../../Components/TableDropdownMenu/TableDro
   name: "Royality Name",
   cell: (row) => (
     <TableDropdownMenu
-      index={row.local_id}
-      label={"Royality Name"}
-      data={royalityNameData}
-      id={"royalityName"}
-      name={"royalityName"}
+      index={row?.local_id}
+      label={"Godown"}
+      data={godownData}
+      id={"godownAddress"}
+      name={"godownAddress"}
+      code={"godownAddressCode"}
+      description={"godownAddressDescription"}
       onChange={handleDropdownChange}
     />
   ),
